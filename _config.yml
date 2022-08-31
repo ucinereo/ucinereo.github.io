@@ -1,0 +1,36 @@
+#
+# Configuration file for black-ink theme
+#
+
+title: "ucinereos's site"
+author:
+  name: ucinereo
+  email: nicola.studer2000@gmail.com
+
+profile-image: /assets/imgs/profile.jpeg
+description: >
+  My name is Nicola Studer and I am an undergraduate studying computer science at
+  [ETH Zurich](https://ethz.ch/de.html). Prior to my academic career I finished my 
+  apprenticeship as application developer at [EMVs Oberwallis](https://www.berufsbildung-vs.ch/bildungsangebote/berufliche-grundbildung/bildungszentrum-fuer-technische-berufe-emvs/)
+  working for the [brain-tec group](https://braintec.com/) as trainee mainly focusing 
+  on the development and distribution of [odoo](https://www.odoo.com/). Followed by an 
+  intense autodidact speedrun of the [Ergänzungsprüfung Passerelle](https://www.sbfi.admin.ch/sbfi/de/home/bildung/maturitaet/gymnasiale-maturitaet/passerelle.html)
+  which took about 3 months. <br/><br/>
+  My interests vary from computer graphics, machine learning to basically anything related to computer animation.
+  Feel free to hit me up if you are interested in any of my projects.
+
+black-ink:
+  date_format: "%Y-%m-%d"
+
+  # generate social link
+  social_links:
+    github: ucinereo
+    youtube: rockjazzpro
+
+collections:
+  - cheatsheets
+  - projects
+
+# Build settings
+remote_theme: ucinereo/jekyll-black-ink
+baseurl: ""

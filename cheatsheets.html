@@ -1,0 +1,54 @@
+---
+title: ETH Cheatsheets
+layout: page
+---
+
+<h2>Cheatsheet and summary collection for BsC CS at ETHZ</h2>
+<p>
+    This collection contains my summaries/cheatsheets throughout the bachelor's programme. Cheatsheets which
+    can be used for an exam are marked with an <i class="cgreen fa-solid fa-circle-check"></i> icon, but please be sure to check the current requirements for each lecture.
+</p>
+
+<p>
+    Summaries and cheatsheets are written mostly with LaTeX, with the exception for coding intensive courses I prefer markdown.
+    The site also contains the handwritten cheatsheets required for some courses.
+</p>
+
+{% assign semesters = site.cheatsheets | group_by:"semester" | sort:'name'%}
+{% for semester in semesters %}
+    <h2>Semester {{ semester.name }}</h2>
+    <section class="cs-list">
+        {% for cs in semester.items%}
+            <div class="cs">
+                <h2>
+                    {{ cs.title }}
+                    {% if cs.exam_approved %}<i class="cgreen fa-solid fa-circle-check"></i>{% endif %}
+                </h2>
+                <div class="cs-meta">
+                    <div class="cs-modified">Last modified at: <time datetime="{{ cs.last_modified_at | date_to_xmlschema }}">{{ cs.last_modified_at | date: date_format }}</time></div>
+                    <div class="cs-lang">Language: <code>{{ cs.language }}</code></div>
+                </div>
+                {{ cs.content }}
+                <div class="cs-links">
+                    <div class="cs-files">
+                        {% if cs.pdf_download != false and cs.pdf_download != null %}
+                            <a href="/assets/cheatsheets/{{ cs.pdf_download }}" class="cs-download">Download PDF <i class="fa-solid fa-file-pdf"></i></a>
+                        {% endif %}
+                        {% if cs.markdown != false and cs.markdown != null %}
+                            <a href="{{ cs.markdown }}" class="cs-download">View Markdown <i class="fa-brands fa-markdown"></i></a>
+                        {% endif %}
+                        {% if cs.alternative_download != false and cs.alternative_download != null %}
+                            <a href="{{ cs.alternative_download.link }}" class="cs-download">Download <code>{{ cs.alternative_download.type }}</code> <i class="fa-solid fa-file"></i></a>
+                        {% endif %}
+                    </div>
+                    <div class="cs-sources">
+                        Sources: 
+                        {% for source in cs.sources %}
+                            <a href="{{ source.link }}" class="cs-source">{{ source.description }}</a>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+    </section>
+{% endfor %}

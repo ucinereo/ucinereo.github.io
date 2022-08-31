@@ -1,0 +1,122 @@
+---
+---
+@import "black-ink";
+
+// Cystom style for cheatsheet view
+.cgreen {
+    color: #008a65;
+}
+
+.cs-meta {
+    color: $base-font-color-light;
+}
+
+.cs-meta {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    column-gap: 2rem;
+
+    time {
+        font-style: italic;
+    }
+}
+
+.cs-list {
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.cs {
+    box-sizing: border-box;
+    width: 23rem;
+    h2 {
+        margin: 0;
+        &:before {
+            content: ''
+        }
+    }
+    p {
+        margin: .5rem 0;
+    }
+
+    background-color: #f3f3f3;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.cs-files {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: start;
+    column-gap: 1rem;
+}
+
+.cs-download:not(:last-child):after {
+    content: '/';
+    color: black;
+    padding-left: 1rem;
+}
+
+.cs-sources {
+    margin: .5rem 0;
+}
+
+.cs-source:not(:last-child):after {
+    content: ',';
+    color: $base-font-color;
+}
+
+.cs-source:last-child:after {
+    content: '.';
+    color: $base-font-color;
+}
+
+// Project list
+.project-list {
+    padding-left: 1rem;
+    list-style: none;
+
+    .post-meta {
+        margin-right: 2rem;
+        color: $base-font-color-light;
+    }
+
+    li {
+        display: flex;
+        align-items: baseline;
+        margin: 1rem 0;
+    }
+}
+
+.project {
+    h3 {
+        margin: 0;
+        color: $base-font-color;
+
+        &:hover {
+            color: $base-highlight-light;
+        }
+    }
+
+    p {
+        margin: .5rem 0;
+        color: $base-font-color-light;
+        font-style: italic;
+    }
+}
+
+.cs-links {
+    display: absolute;
+    bottom: 0;
+}
